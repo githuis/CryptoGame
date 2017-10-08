@@ -1,3 +1,5 @@
+# Guide for writing
+
 1. The message box fits about 65 characters, it tests for line breaks automatically.
 2. Empty lines are ignored.
 
