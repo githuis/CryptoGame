@@ -16,4 +16,4 @@ As an example,
 
 `bsay_hi:Hello!`
 
-Would be called with the identifier _say_hi_ and write _"Hello!"_ in the message box.
+Would be called with the identifier _say_hi_ and write _"Hebillobi!"_ in the message box.
