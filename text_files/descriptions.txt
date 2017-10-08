@@ -2,3 +2,4 @@
 0beer:a glass of beer. Bleach.
 0pickle_juice:pickle juice
 0wet_martini:a wet martini
+0shield: a shield
