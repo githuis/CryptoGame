@@ -121,7 +121,7 @@ class Bitown(object):
 				elif engine.checkBordering(Player, Pickle_plant):
 					status = progress.getProgress('bi_pickle')
 					#if not Pickle in Player.inventory:
-					if status == 1:
+					if status == 0:
 						ans = ''
 
 						while not ans in ('yes', 'no'):
@@ -136,7 +136,7 @@ class Bitown(object):
 							engine.displayMessage((Pickle_plant.lines['unpicked2'], ), surface)
 							engine.wait()
 					
-					elif not (status ==0):
+					else:
 						engine.displayMessage((Pickle_plant.lines['picked'], ), surface)
 						engine.wait()
 
