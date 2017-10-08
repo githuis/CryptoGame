@@ -17,5 +17,5 @@ As an example, I've used a pickle, created by me:
 - Name: mamonu
 - Link: https://github.com/mamonu/
 - Picture: shield.png
-- Item description: 0pickle
+- Item description: 0shield
 - Comment: Useful shield for walking around Bitown, and can be used for protection.
