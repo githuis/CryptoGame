@@ -11,3 +11,9 @@
 	- v = vigenere
 	- m = multiplicative cipher
 	- 0 = normal/unencrypted
+
+As an example,
+
+bsay_hi:Hello!
+
+Would be called with the identifier say_hi and write "Hello!" in the message box.
