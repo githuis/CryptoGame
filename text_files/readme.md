@@ -5,9 +5,9 @@
 
 4. The first character specifies which encryption shall be used:
 
-	b = bilanguage
-	B = bob's speech impediment
-	c = caesar cipher
-	v = vigenere
-	m = multiplicative cipher
-	0 = normal/unencrypted
+	- b = bilanguage
+	- B = bob's speech impediment
+	- c = caesar cipher
+	- v = vigenere
+	- m = multiplicative cipher
+	- 0 = normal/unencrypted
