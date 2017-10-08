@@ -14,6 +14,6 @@
 
 As an example,
 
-bsay_hi:Hello!
+`bsay_hi:Hello!`
 
-Would be called with the identifier say_hi and write "Hello!" in the message box.
+Would be called with the identifier say_hi and write _"Hello!"_ in the message box.
