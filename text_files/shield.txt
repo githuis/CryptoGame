@@ -1,1 +1,5 @@
+0unpicked:What's this? Oh, a shield!
+0unpicked2:You pocketed the newly picked shield.
+0q1:Pick it? 
 
+0picked:You see a mysterious shield, but it's already been picked.
