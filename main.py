@@ -119,6 +119,11 @@ while True:
 		if event.type == KEYDOWN:
 			if event.key == K_e:
 				Inventory.open(Player.inventory, DISPLAYSURF)
+				
+		if event.type == pygame.QUIT:
+			pygame.quit()
+			sys.exit()
+
 
 		if current_room == 'default_room':
 			tmp = Default.enter(DISPLAYSURF, event, old_room)
@@ -154,8 +159,6 @@ while True:
 			tmp = Pickleshed.enter(DISPLAYSURF, event, old_room)
 			old_room = tmp[0]
 			current_room = tmp[1]
-
-
 
 
 
