@@ -19,3 +19,16 @@ As an example, I've used a pickle, created by me:
 - Picture: shield.png
 - Item description: 0shield
 - Comment: Useful shield for walking around Bitown, and can be used for protection.
+
+
+
+### Rose Petals
+
+- Name: amos1969
+- Link: https://github.com/amos1969/
+- Picture: rose_petals.png
+- Item description: 0rose_petals
+- Comment: Some rose petals lying on the floor. They can be used as an ingredient to make something else.
+
+
+
