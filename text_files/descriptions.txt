@@ -3,3 +3,4 @@
 0pickle_juice:pickle juice
 0wet_martini:a wet martini
 0shield: a shield
+0wet_floor: a wet floor sign

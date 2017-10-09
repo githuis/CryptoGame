@@ -30,5 +30,11 @@ As an example, I've used a pickle, created by me:
 - Item description: 0rose_petals
 - Comment: Some rose petals lying on the floor. They can be used as an ingredient to make something else.
 
+### Wet Floor Sign
 
+- Name: billwarker
+- Link: https://github.com/billwarker
+- Picture: wet_floor.png
+- Item description: 0wet_floor
+- Comment: A wet floor sign, can be moved to make someone accidentally slip on the wet floor of the bar.
 

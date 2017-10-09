@@ -1,0 +1,5 @@
+0wet_floor_a:Oh look, a wet floor sign. The floor does look kind of slippery.
+0wet_floor_b:Someone might slip if this sign wasn't here.
+0wet_floor_q1: Throw the sign in the trash? 
+
+0wet_floor_moved: The floor looks slippery, but there is no wet floor sign around.
