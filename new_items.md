@@ -38,3 +38,11 @@ As an example, I've used a pickle, created by me:
 - Item description: 0wet_floor
 - Comment: A wet floor sign, can be moved to make someone accidentally slip on the wet floor of the bar.
 
+
+### Necronomicon
+
+- Name: mamonu
+- Link: https://github.com/mamonu/
+- Picture: necronomicon.png
+- Item description: 0necronomicon
+- Comment: the most evil book ever created. Be very afraid
