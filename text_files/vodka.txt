@@ -1,0 +1,5 @@
+0unpicked:A bottle of strong vodka. If you drink it all you'll probably get really drunk.
+0unpicked2:You grab the bottle of vodka and put it in your bag. You can't wait to drink it.
+0q1:Pick it? 
+
+0picked:A small round circle on the shelf is not covered in dust. You remember taking a bottle of vodka from here.

@@ -46,3 +46,11 @@ As an example, I've used a pickle, created by me:
 - Picture: necronomicon.png
 - Item description: 0necronomicon
 - Comment: the most evil book ever created. Be very afraid
+
+### Vodka
+
+- Name: githuis
+- Link: https://github.com/githuis/
+- Picture: vodka.png
+- Item description: 0vodka
+- Comment: A strong bottle of vodka, with a high alcohol percentage.
