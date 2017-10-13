@@ -1,0 +1,5 @@
+0unpicked:What are these on the floor? Oh, some rose petals!
+0unpicked2:You pocketed the newly rose petals.
+0q1:Pick them? 
+
+0picked:You see some pretty rose petals, but they've already been picked.
