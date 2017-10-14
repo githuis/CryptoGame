@@ -27,8 +27,8 @@ class Default(object):
 		return ('default_room', new_room)
 
 	def talk_with_sign1(self, Sign, surface):
-		answer = engine.getInput((Sign.lines['l1a'], Sign.lines['l1b']), Sign.lines['q1'], surface)
-		engine.displayMessage((Sign.lines['l2a'], Sign.lines['l2b'], answer, ), surface)
+		answer = engine.get_input((Sign.lines['l1a'], Sign.lines['l1b']), Sign.lines['q1'], surface)
+		engine.display_message((Sign.lines['l2a'], Sign.lines['l2b'], answer,), surface)
 		engine.wait()
 
 
@@ -50,9 +50,9 @@ class Default(object):
 
 		if event.type == KEYDOWN:
 			if event.key == K_RETURN:
-				if engine.checkBordering(Player, Sign):
+				if engine.check_bordering(Player, Sign):
 					self.talk_with_sign1(Sign, surface)
-				if engine.checkBordering(Player, Start):
+				if engine.check_bordering(Player, Start):
 					tmp = self.exit('bitown')
 					from_room = tmp[0]
 					new_room = tmp[1]

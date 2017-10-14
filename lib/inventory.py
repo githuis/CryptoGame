@@ -82,8 +82,8 @@ class Inventory(pygame.sprite.Sprite):
 			on_item = 0
 			for event in pygame.event.get():
 				for sprite in sprites:
-					if engine.checkCollision(self.cursor, sprite):
-						current_item = engine.checkCollision(self.cursor, sprite)[1]
+					if engine.check_collision(self.cursor, sprite):
+						current_item = engine.check_collision(self.cursor, sprite)[1]
 						on_item = 1
 
 				if on_item == 0:
@@ -105,4 +105,3 @@ class Inventory(pygame.sprite.Sprite):
 
 					elif event.key == K_e:
 						return
-

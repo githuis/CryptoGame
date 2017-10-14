@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from lib import engine
 
+
 class Pickleshed(object):
 	def __init__(self, image, sprites, collide_group):
 

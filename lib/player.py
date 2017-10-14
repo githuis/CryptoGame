@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from lib import engine
 
+
 class Player(pygame.sprite.Sprite):
 	'''player sprite'''
 
@@ -48,7 +49,7 @@ class Player(pygame.sprite.Sprite):
 			self.rect.x = old_x
 			self.rect.y = old_y
 		for s in sprites:
-			if engine.checkCollision(self, s):
+			if engine.check_collision(self, s):
 				self.rect.x = old_x
 				self.rect.y = old_y
 				break

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-#This is just so you can run it directly. Don't know if it works for Windows.
-import pygame, sys, os
+# This is just so you can run it directly. Don't know if it works for Windows.
+import pygame
+import sys
+import os
 from pygame.locals import *
 from lib import engine
 from lib import interaction_block, item
@@ -104,7 +106,7 @@ old_room = 'default_room'
 
 
 def updateGroups():
-	if progress.getProgress('bi_library') == 2:
+	if progress.get_progress('bi_library') == 2:
 		library_group.add(Book_bob)
 		library_collide.add(Book_bob)
 		Library = library.Library('pictures/library_bg.png', library_group, library_collide)
@@ -159,10 +161,5 @@ while True:
 			tmp = Pickleshed.enter(DISPLAYSURF, event, old_room)
 			old_room = tmp[0]
 			current_room = tmp[1]
-
-
-
-
-
 
 	engine.loop(FPS, event)

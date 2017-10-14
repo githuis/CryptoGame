@@ -39,7 +39,7 @@ def bi(text):
 	newstring = ""
 	for i in range(len(text)):
 		if text[i] in 'aeiouAEIOU':
-			 newstring = newstring + text[i] + 'bi'
+			newstring = newstring + text[i] + 'bi'
 		else:
 			newstring = newstring + text[i]
 	return newstring
@@ -56,8 +56,7 @@ def bireverse(text):
 			else:
 				isab = False
 				isai = False
-			if isab == False:
-
+			if not isab:
 				newstring = newstring + text[i]
 			else:
 				isab = False
@@ -98,7 +97,7 @@ def bobreverse(text):
 def caesar(text, key):
 	newstring = ''
 	for i in range( len(text) ):
-		letter = False;
+		letter = False
 		for n in range (len(alphabet)):
 			cap = False
 			newchar = text[i]
@@ -110,8 +109,8 @@ def caesar(text, key):
 				if cap == True:
 					newchar = newchar.upper()
 				newstring = newstring + newchar
-				letter = True;
-		if letter == False:
+				letter = True
+		if not letter:
 			newstring = newstring + (text[i])
 	return newstring	
 	
@@ -124,7 +123,7 @@ def mulcipher(text, key):
 
 	for letter in text:
 
-		if not letter in alphabet and not letter in alphabet.upper():
+		if letter not in alphabet and letter not in alphabet.upper():
 			newstring += letter
 			continue
 
@@ -161,7 +160,7 @@ def encrypt(text, kind, somekey=0):
 	elif kind == "caesar":
 		return caesar(text, key)
 	elif kind == "vigenere":
-		if len1 == True:
+		if len1:
 			return caesar(text, key)
 		else:
 			return vigenere(text, key)
@@ -187,7 +186,7 @@ def decrypt(text, kind, somekey=0):
 	elif kind == "caesar":
 		return caesar(text, int_inv(key))
 	elif kind == "vigenere":
-		if len1 == True:
+		if len1:
 			return caesar(text, int_inv(key))
 		else:
 			return vigenere(text, list_inv(key))
