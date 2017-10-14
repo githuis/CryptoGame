@@ -22,7 +22,8 @@ pygame.display.set_caption('this_is_a_game')
 font = pygame.font.SysFont('monospace', 15)
 
 # set up sprites
-Player = player.Player('pictures/plr.png', 75, 75, 75, 75, DISPLAYSURF, 'PLAYER')
+Player = player.Player('pictures/player_right.png', 75, 75, 75, 75, DISPLAYSURF, 'PLAYER')
+Player.imagepath2 = 'pictures/player_left.png'
 
 Sign = interaction_block.Block('pictures/sign.png', 75, 75, 300, 525, DISPLAYSURF, 'SIGN', 'text_files/sign1.txt')
 Start = interaction_block.Block('pictures/start.png', 75, 75, 525, 525, DISPLAYSURF, 'START')

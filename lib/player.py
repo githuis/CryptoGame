@@ -6,10 +6,11 @@ from lib import engine
 class Player(pygame.sprite.Sprite):
 	'''player sprite'''
 
-	def __init__(self, image, width, height, x, y, surface, ID):
+	def __init__(self, imagepath, width, height, x, y, surface, ID):
 		pygame.sprite.Sprite.__init__(self)
 
-		self.image = pygame.image.load(image)
+		self.imagepath = imagepath
+		self.image = pygame.image.load(imagepath)
 
 		self.direction = 'right'
 		self.speed = 75
@@ -38,10 +39,12 @@ class Player(pygame.sprite.Sprite):
 		old_y = self.rect.y
 
 		if self.direction == 'right':
+			self.change_picture('to_right')
 			self.rect.x += self.speed
 		elif self.direction == 'down':
 			self.rect.y += self.speed
 		elif self.direction == 'left':
+			self.change_picture('to_left')
 			self.rect.x -= self.speed
 		elif self.direction == 'up':
 			self.rect.y -= self.speed
@@ -60,3 +63,9 @@ class Player(pygame.sprite.Sprite):
 	def add_to_inventory(self, sprites):
 		for sprite in sprites:
 			self.inventory.add(sprite)
+
+	def change_picture(self, newpic):
+		if newpic == 'to_right':
+			self.image = pygame.image.load(self.imagepath)
+		elif newpic == 'to_left':
+			self.image = pygame.image.load(self.imagepath2)
