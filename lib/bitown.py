@@ -131,7 +131,7 @@ class Bitown(object):
 						if ans =='yes':
 							progress.set_progress('bi_pickle', 2)
 							Player.add_to_inventory((Pickle, ))
-							Pickle_plant.picked = True
+							Pickle_plant.picked = 1
 							Pickle_plant.change_picture(2)
 
 							engine.display_message((Pickle_plant.lines['unpicked2'],), surface)
