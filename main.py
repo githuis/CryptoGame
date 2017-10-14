@@ -52,6 +52,7 @@ Save = interaction_block.Block('pictures/save.png', 70, 70, 825, 300, DISPLAYSUR
 Pickle = item.Item('pictures/pickle.png', DISPLAYSURF, 'PICKLE', 'pickle')
 Picklejuice = item.Item('pictures/picklejuice.png', DISPLAYSURF, 'PICKLEJUICE', 'pickle_juice')
 Beer = item.Item('pictures/beer.png', DISPLAYSURF, 'BEER', 'beer')
+Wet_martini = item.Item('pictures/wet_martini.png', DISPLAYSURF, 'WET_MARTINI', 'wet_martini')
 
 Inventory_cursor = interaction_block.Block('pictures/cursor.png', 85, 85, 200, 495, DISPLAYSURF)
 
@@ -59,7 +60,7 @@ Inventory = inventory.Inventory('pictures/inventory.png', 520, 180, 190, 485, In
 
 # get item descriptions
 
-engine.get_item_descriptions((Pickle, Picklejuice, Beer))
+engine.get_item_descriptions((Pickle, Picklejuice, Beer, Wet_martini))
 
 # set up sprite groups
 default_group = pygame.sprite.Group(Player, Sign, Start, wall1, wall2)
@@ -74,7 +75,7 @@ house1_collide = pygame.sprite.Group()
 
 bar_group = pygame.sprite.Group(Player, Bartender, Poet)
 bar_collide = pygame.sprite.Group(Bartender, Poet)
-bar_items = pygame.sprite.Group(Picklejuice, Beer)
+bar_items = pygame.sprite.Group(Picklejuice, Beer, Wet_martini)
 
 house_bob_group = pygame.sprite.Group(Player, Bob, Load, Save)
 house_bob_collide = pygame.sprite.Group(Bob, Load, Save)

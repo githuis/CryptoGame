@@ -39,6 +39,8 @@ class Bar(object):
 				Picklejuice = item
 			if item.ID == 'BEER':
 				Beer = item
+			if item.ID == 'WET_MARTINI':
+				Wet_martini = item
 
 		for item in Player.inventory:
 			if item.ID == 'PICKLE':
@@ -50,6 +52,7 @@ class Bar(object):
 		
 		if answer == 'webit mabirtibinibi':
 			engine.displayMessage((Bartender.lines['l2a'] + answer + Bartender.lines['l2b'], ), surface)
+			Player.inventory.add(Wet_martini)
 		elif answer == 'bebiebir':
 			engine.displayMessage((Bartender.lines['l2a'] + answer + Bartender.lines['l2b'], ), surface)
 			engine.wait()
