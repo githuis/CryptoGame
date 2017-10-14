@@ -3,6 +3,7 @@ from pygame.locals import *
 from lib import engine, progress
 from lib import cryptofunctions
 
+
 class House_bob(object):
 	def __init__(self, image, sprites, collide_group):
 
@@ -29,39 +30,39 @@ class House_bob(object):
 		return ('house_bob', new_room)
 	
 	def talk_with_save(self, Save, surface):
-		name = progress.getProgress('name')
-		answer = engine.getInput((Save.lines['l1a'], (Save.lines['l1b'] + name)), Save.lines['l1q'], surface, 1)
+		name = progress.get_progress('name')
+		answer = engine.get_input((Save.lines['l1a'], (Save.lines['l1b'] + name)), Save.lines['l1q'], surface, 1)
 		if answer == 'yes':
-			engine.displayMessage((Save.lines['l2'], ), surface)
+			engine.display_message((Save.lines['l2'],), surface)
 			engine.wait()
 		elif answer == 'change name':
-			answer = engine.getInput((Save.lines['l3'], ), ' ', surface, 2)
-			progress.setProgress('name', answer)
+			answer = engine.get_input((Save.lines['l3'],), ' ', surface, 2)
+			progress.set_progress('name', answer)
 			
 	def talk_with_load(self, Load, surface):
-		answer = engine.getInput((Load.lines['l1a'], Load.lines['l1b']), ' ', surface, 1)
+		answer = engine.get_input((Load.lines['l1a'], Load.lines['l1b']), ' ', surface, 1)
 		if answer == 'yes':
-			answer = engine.getInput((Load.lines['l2'], ), ' ', surface, 1)
+			answer = engine.get_input((Load.lines['l2'],), ' ', surface, 1)
 			engine.wait()
 			
 	def talk_with_bob(self, Bob, surface):
-		status = progress.getProgress('bi_bob')
-		name = progress.getProgress('name')
+		status = progress.get_progress('bi_bob')
+		name = progress.get_progress('name')
 		if status == 0:
-			answer = engine.getInput((Bob.lines['l1a'], ), Bob.lines['l1q'], surface, 2)
-			progress.setProgress('bi_library', 2)
+			answer = engine.get_input((Bob.lines['l1a'],), Bob.lines['l1q'], surface, 2)
+			progress.set_progress('bi_library', 2)
 			if answer == 'yes':
-				answer = engine.getInput((Bob.lines['l2yes'], ), Bob.lines['l2q'], surface, 2)
-				progress.setProgress('name', answer)
-				engine.displayMessage(((Bob.lines['l3a'] + cryptofunctions.encrypt(answer, 'bob')), Bob.lines['l3b']), surface)
+				answer = engine.get_input((Bob.lines['l2yes'],), Bob.lines['l2q'], surface, 2)
+				progress.set_progress('name', answer)
+				engine.display_message(((Bob.lines['l3a'] + cryptofunctions.encrypt(answer, 'bob')), Bob.lines['l3b']), surface)
 				engine.wait()
-				engine.getInput((Bob.lines['l4a'], ), Bob.lines['l4q'], surface, 2)
-				engine.displayMessage((Bob.lines['l5'], ), surface)
-				progress.setProgress('bi_bob', 1)
+				engine.get_input((Bob.lines['l4a'],), Bob.lines['l4q'], surface, 2)
+				engine.display_message((Bob.lines['l5'],), surface)
+				progress.set_progress('bi_bob', 1)
 			else:
-				engine.displayMessage((Bob.lines['l2no'], ), surface)
+				engine.display_message((Bob.lines['l2no'],), surface)
 		elif status == 1:
-			engine.displayMessage((Bob.lines['l6'], ), surface)
+			engine.display_message((Bob.lines['l6'],), surface)
 		
 		engine.wait()
 		
@@ -84,11 +85,11 @@ class House_bob(object):
 
 		if event.type == KEYDOWN:
 			if event.key == K_RETURN:
-				if engine.checkBordering(Player, Bob) == True:
+				if engine.check_bordering(Player, Bob):
 					self.talk_with_bob(Bob, surface)
-				if engine.checkBordering(Player, Save) == True:
+				if engine.check_bordering(Player, Save):
 					self.talk_with_save(Save, surface)
-				if engine.checkBordering(Player, Load) == True:
+				if engine.check_bordering(Player, Load):
 					self.talk_with_load(Load, surface)
 				if Player.rect.x == 450 and Player.rect.y == 0:
 					tmp = self.exit('bitown')

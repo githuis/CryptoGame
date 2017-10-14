@@ -5,10 +5,9 @@ from lib import textbox
 from lib import cryptofunctions
 
 
-
 '''all sorts of game engine thingies'''
 
-def checkCollision(sp1, sp2):
+def check_collision(sp1, sp2):
 	if pygame.sprite.collide_rect(sp1, sp2):
 		return (sp1, sp2)
 	else:
@@ -18,7 +17,7 @@ def checkCollision(sp1, sp2):
 	else:
 		return False'''
 
-def checkBordering(sp1, sp2):
+def check_bordering(sp1, sp2):
 	'''checks if sp1 and sp2 are right next to each other'''
 
 	'''if (sp1.rect.topleft == sp2.rect.topright or
@@ -52,7 +51,7 @@ def checkBordering(sp1, sp2):
 		return False
 
 
-def displayMessage(messages, surface):
+def display_message(messages, surface):
 	Msgbox = textbox.Textbox('pictures/msgbox.png', 500, 300, 150, 350, surface)
 
 	font = pygame.font.SysFont('monospace', 15)
@@ -80,7 +79,7 @@ def displayMessage(messages, surface):
 
 	loop(30)
 
-def displayInputBox(message, surface, size=0):
+def display_input_box(message, surface, size=0):
 	if size == 0:
 		Textbox = textbox.Textbox('pictures/textbox.png', 190, 25, 250, 550, surface)
 	elif size == 1:
@@ -95,12 +94,12 @@ def displayInputBox(message, surface, size=0):
 
 	loop(30)	#fps
 
-def getInput(msgs, question, surface, size=0):
+def get_input(msgs, question, surface, size=0):
 	'''displays an input box and returns entered string'''
 
 	current_string = ''
-	displayMessage(msgs, surface)
-	displayInputBox(question + current_string, surface, size)
+	display_message(msgs, surface)
+	display_input_box(question + current_string, surface, size)
 	brk = False
 
 	event = None
@@ -113,7 +112,7 @@ def getInput(msgs, question, surface, size=0):
 					brk = True
 				elif event.key <= 127:
 					current_string = current_string + chr(event.key)
-				displayInputBox(question + current_string, surface, size)
+				display_input_box(question + current_string, surface, size)
 
 	return current_string
 

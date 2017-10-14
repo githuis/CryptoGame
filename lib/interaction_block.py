@@ -1,6 +1,7 @@
 import pygame
 from lib import engine
 
+
 class Block(pygame.sprite.Sprite):
 	'''this sprite cannot (shouldn't) move'''
 
@@ -21,7 +22,7 @@ class Block(pygame.sprite.Sprite):
 	def draw(self, surface):
 		surface.blit(self.image, self.rect)
 
-	def changePicture(self, newpic):
+	def change_picture(self, newpic):
 		if newpic == 1:
 			self.image = pygame.image.load(self.imagepath)
 		elif newpic == 2:
