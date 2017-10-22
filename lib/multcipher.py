@@ -1,5 +1,6 @@
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
+
 def mod_inverse(key):
 	n = 1
 	while 1:
@@ -18,7 +19,7 @@ def encrypt(message, key):
 
 	for letter in message:
 
-		if not letter in alphabet and not letter in alphabet.upper():
+		if letter not in alphabet and letter not in alphabet.upper():
 			newstring += letter
 			continue
 
@@ -31,13 +32,14 @@ def encrypt(message, key):
 
 	return newstring
 
+
 def decrypt(message, key):
 	newkey = mod_inverse(key)
 	newstring = ''
 
 	for letter in message:
 
-		if not letter in alphabet and not letter in alphabet.upper():
+		if letter not in alphabet and letter not in alphabet.upper():
 			newstring += letter
 			continue
 
@@ -49,6 +51,7 @@ def decrypt(message, key):
 					newstring += alphabet[(i*newkey) % 26].lower()
 
 	return newstring
+
 
 print(encrypt('I am snek 283.', 7))
 print(decrypt(encrypt('I am snek 283.', 7), 7))

@@ -1,13 +1,15 @@
 import sys, os
+
+
 class Memory:
 	def save(ID, text, filename):
 		file = open(filename, 'w')
 		line = ID + ':' + text + '/n'
-		Memory.deleteLine(ID)
+		Memory.delete_line(ID)
 		file.write(line)
 		file.close()
 		
-	def deleteLine(searchID, filename):
+	def delete_line(searchID, filename):
 		file = open(filename, 'w')
 		for line in file:
 			ID = ''
@@ -16,8 +18,7 @@ class Memory:
 		
 			if line == '\n':					# ignore empty lines
 				continue
-	
-	
+
 			for char in line:
 				if found_ID:
 					new_line = new_line + char
@@ -25,13 +26,12 @@ class Memory:
 					ID = ID + char
 				elif char == ':':
 					found_ID = True
-	
 
 			if ID != searchID:
 				file.write(ID + ':' + new_line)
 		file.close()
 
-	def loadB(searchID, filename):
+	def load_b(searchID, filename):
 		text = Memory.load(searchID, filename)
 		if text == 'True':
 			output = True
@@ -53,8 +53,7 @@ class Memory:
 				continue
 	
 			line = line[0:-1]					# remove line breaks that are automatically added at the end of lines (\n)
-	
-	
+
 			for char in line:
 				if found_ID:
 					new_line = new_line + char
@@ -62,10 +61,8 @@ class Memory:
 					ID = ID + char
 				elif char == ':':
 					found_ID = True
-	
 
 			if ID == searchID:
-
 				output = new_line
 				
 				break

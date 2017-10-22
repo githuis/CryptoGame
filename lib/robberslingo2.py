@@ -9,6 +9,7 @@ def encrypt(text):
 
 	return new_text
 
+
 def decrypt(text):
 	position = 1
 	last_consonant = text[0]

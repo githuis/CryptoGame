@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from lib import engine, progress
 
+
 class Bitown(object):
 	def __init__(self, image, sprites, collide_group):
 		
@@ -93,53 +94,52 @@ class Bitown(object):
 
 		if event.type == KEYDOWN:
 			if event.key == K_RETURN:
-				if engine.checkBordering(Player, Door):
+				if engine.check_bordering(Player, Door):
 					tmp = self.exit('house1')
 					from_room = tmp[0]
 					new_room = tmp[1]
 
-				elif engine.checkBordering(Player, Door_bar):
+				elif engine.check_bordering(Player, Door_bar):
 					tmp = self.exit('bar')
 					from_room = tmp[0]
 					new_room = tmp[1]
 
-				elif engine.checkBordering(Player, Door_bob):
+				elif engine.check_bordering(Player, Door_bob):
 					tmp = self.exit('house_bob')
 					from_room = tmp[0]
 					new_room = tmp[1]
 
-				elif engine.checkBordering(Player, Door_pickleshed):
+				elif engine.check_bordering(Player, Door_pickleshed):
 					tmp = self.exit('pickleshed')
 					from_room = tmp[0]
 					new_room = tmp[1]
 
-				elif engine.checkBordering(Player, Door_library):
+				elif engine.check_bordering(Player, Door_library):
 					tmp = self.exit('library')
 					from_room = tmp[0]
 					new_room = tmp[1]
 
-				elif engine.checkBordering(Player, Pickle_plant):
-					status = progress.getProgress('bi_pickle')
+				elif engine.check_bordering(Player, Pickle_plant):
+					status = progress.get_progress('bi_pickle')
 					#if not Pickle in Player.inventory:
 					if status == 0:
 						ans = ''
 
-						while not ans in ('yes', 'no'):
-							ans = engine.getInput((Pickle_plant.lines['unpicked'], ), Pickle_plant.lines['q1'], surface)
+						while ans not in ('yes', 'no'):
+							ans = engine.get_input((Pickle_plant.lines['unpicked'],), Pickle_plant.lines['q1'], surface)
 
 						if ans =='yes':
-							progress.setProgress('bi_pickle', 2)
+							progress.set_progress('bi_pickle', 2)
 							Player.add_to_inventory((Pickle, ))
-							Pickle_plant.picked = True
-							Pickle_plant.changePicture(2)
+							Pickle_plant.picked = 1
+							Pickle_plant.change_picture(2)
 
-							engine.displayMessage((Pickle_plant.lines['unpicked2'], ), surface)
+							engine.display_message((Pickle_plant.lines['unpicked2'],), surface)
 							engine.wait()
 					
 					else:
-						engine.displayMessage((Pickle_plant.lines['picked'], ), surface)
+						engine.display_message((Pickle_plant.lines['picked'],), surface)
 						engine.wait()
-
 
 			elif event.key in (K_d, K_s, K_a, K_w):
 				Player.move(event.key, self.collide_group)

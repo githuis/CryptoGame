@@ -54,3 +54,20 @@ As an example, I've used a pickle, created by me:
 - Picture: vodka.png
 - Item description: 0vodka
 - Comment: A strong bottle of vodka, with a high alcohol percentage.
+
+### Cappucino
+
+- Name: Yellotzell
+- Link: https://github.com/Yellotzell/
+- Picture: cappucino.png
+- Item description: 0cappucino
+- Comment: Useful drink for repleneshing magic points.
+
+
+### Grapefruit
+
+- Name: Yellotzell
+- Link: https://github.com/Yellotzell/
+- Picture: grapefruit.png
+- Item description: 0grapefruit
+- Comment: A very useful ingredient to enhance magical potions.

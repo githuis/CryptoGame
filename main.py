@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-#This is just so you can run it directly. Don't know if it works for Windows.
-import pygame, sys, os
+# This is just so you can run it directly. Don't know if it works for Windows.
+import pygame
+import sys
+import os
 from pygame.locals import *
 from lib import engine
 from lib import interaction_block, item
@@ -20,7 +22,8 @@ pygame.display.set_caption('this_is_a_game')
 font = pygame.font.SysFont('monospace', 15)
 
 # set up sprites
-Player = player.Player('pictures/plr.png', 75, 75, 75, 75, DISPLAYSURF, 'PLAYER')
+Player = player.Player('pictures/player_right.png', 75, 75, 75, 75, DISPLAYSURF, 'PLAYER')
+Player.imagepath2 = 'pictures/player_left.png'
 
 Sign = interaction_block.Block('pictures/sign.png', 75, 75, 300, 525, DISPLAYSURF, 'SIGN', 'text_files/sign1.txt')
 Start = interaction_block.Block('pictures/start.png', 75, 75, 525, 525, DISPLAYSURF, 'START')
@@ -52,6 +55,7 @@ Save = interaction_block.Block('pictures/save.png', 70, 70, 825, 300, DISPLAYSUR
 Pickle = item.Item('pictures/pickle.png', DISPLAYSURF, 'PICKLE', 'pickle')
 Picklejuice = item.Item('pictures/picklejuice.png', DISPLAYSURF, 'PICKLEJUICE', 'pickle_juice')
 Beer = item.Item('pictures/beer.png', DISPLAYSURF, 'BEER', 'beer')
+Wet_martini = item.Item('pictures/wet_martini.png', DISPLAYSURF, 'WET_MARTINI', 'wet_martini')
 
 Inventory_cursor = interaction_block.Block('pictures/cursor.png', 85, 85, 200, 495, DISPLAYSURF)
 
@@ -59,7 +63,7 @@ Inventory = inventory.Inventory('pictures/inventory.png', 520, 180, 190, 485, In
 
 # get item descriptions
 
-engine.get_item_descriptions((Pickle, Picklejuice, Beer))
+engine.get_item_descriptions((Pickle, Picklejuice, Beer, Wet_martini))
 
 # set up sprite groups
 default_group = pygame.sprite.Group(Player, Sign, Start, wall1, wall2)
@@ -74,7 +78,7 @@ house1_collide = pygame.sprite.Group()
 
 bar_group = pygame.sprite.Group(Player, Bartender, Poet)
 bar_collide = pygame.sprite.Group(Bartender, Poet)
-bar_items = pygame.sprite.Group(Picklejuice, Beer)
+bar_items = pygame.sprite.Group(Picklejuice, Beer, Wet_martini)
 
 house_bob_group = pygame.sprite.Group(Player, Bob, Load, Save)
 house_bob_collide = pygame.sprite.Group(Bob, Load, Save)
@@ -104,7 +108,7 @@ old_room = 'default_room'
 
 
 def updateGroups():
-	if progress.getProgress('bi_library') == 2:
+	if progress.get_progress('bi_library') == 2:
 		library_group.add(Book_bob)
 		library_collide.add(Book_bob)
 		Library = library.Library('pictures/library_bg.png', library_group, library_collide)
@@ -159,10 +163,5 @@ while True:
 			tmp = Pickleshed.enter(DISPLAYSURF, event, old_room)
 			old_room = tmp[0]
 			current_room = tmp[1]
-
-
-
-
-
 
 	engine.loop(FPS, event)

@@ -39,34 +39,37 @@ class Bar(object):
 				Picklejuice = item
 			if item.ID == 'BEER':
 				Beer = item
+			if item.ID == 'WET_MARTINI':
+				Wet_martini = item
 
 		for item in Player.inventory:
 			if item.ID == 'PICKLE':
 				Pickle = item
 
-		answer = engine.getInput((Bartender.lines['l1a'], Bartender.lines['l1b'], Bartender.lines['l0']), Bartender.lines['q1'], surface, 2)
+		answer = engine.get_input((Bartender.lines['l1a'], Bartender.lines['l1b'], Bartender.lines['l0']), Bartender.lines['q1'], surface, 2)
 		while not answer in ('bebiebir', 'pibicklebi jubiibicebi', 'webit mabirtibinibi', 'picklej'):
-			answer = engine.getInput((Bartender.lines['l2c'],  Bartender.lines['l1a'], Bartender.lines['l1b']), Bartender.lines['q1'], surface, 2)
+			answer = engine.get_input((Bartender.lines['l2c'],  Bartender.lines['l1a'], Bartender.lines['l1b']), Bartender.lines['q1'], surface, 2)
 		
 		if answer == 'webit mabirtibinibi':
-			engine.displayMessage((Bartender.lines['l2a'] + answer + Bartender.lines['l2b'], ), surface)
+			engine.display_message((Bartender.lines['l2a'] + answer + Bartender.lines['l2b'], ), surface)
+			Player.inventory.add(Wet_martini)
 		elif answer == 'bebiebir':
-			engine.displayMessage((Bartender.lines['l2a'] + answer + Bartender.lines['l2b'], ), surface)
+			engine.display_message((Bartender.lines['l2a'] + answer + Bartender.lines['l2b'], ), surface)
 			engine.wait()
-			engine.displayMessage((Bartender.lines['l5a'], ), surface)
+			engine.display_message((Bartender.lines['l5a'], ), surface)
 			Player.inventory.add(Beer)
 		elif answer == 'pibicklebi jubiibicebi' or answer == 'picklej':
-			status = progress.getProgress('bi_pickle')
+			status = progress.get_progress('bi_pickle')
 			if status == 0 or status == 1:
-				engine.displayMessage((Bartender.lines['l3a'], ), surface)
-				progress.setProgress('bi_pickle', 1)
+				engine.display_message((Bartender.lines['l3a'], ), surface)
+				progress.set_progress('bi_pickle', 1)
 			elif status == 2:
-				engine.displayMessage((Bartender.lines['l4a'], ), surface)
+				engine.display_message((Bartender.lines['l4a'], ), surface)
 				engine.wait()
-				engine.displayMessage((Bartender.lines['l4b'], ), surface)
+				engine.display_message((Bartender.lines['l4b'], ), surface)
 				Player.inventory.remove(Pickle)
 				Player.inventory.add(Picklejuice)
-				progress.setProgress('bi_pickle', 0)
+				progress.set_progress('bi_pickle', 0)
 		elif answer == 'esc':
 			pass
 
@@ -74,9 +77,9 @@ class Bar(object):
 		engine.wait()
 	
 	def talk_with_poet(self, Poet, surface):
-		engine.displayMessage((Poet.lines['l1a'], Poet.lines['l1b'], Poet.lines['l1c'], Poet.lines['l1d'], Poet.lines['l1e']), surface)
+		engine.display_message((Poet.lines['l1a'], Poet.lines['l1b'], Poet.lines['l1c'], Poet.lines['l1d'], Poet.lines['l1e']), surface)
 		engine.wait()
-		engine.displayMessage((Poet.lines['l2a'], ), surface)
+		engine.display_message((Poet.lines['l2a'], ), surface)
 		engine.wait()
 				
 
@@ -99,9 +102,9 @@ class Bar(object):
 
 		if event.type == KEYDOWN:
 			if event.key == K_RETURN:
-				if engine.checkBordering(Player, Bartender) == True:
+				if engine.check_bordering(Player, Bartender) == True:
 					self.talk_with_bartender(Bartender, Player, surface)
-				elif engine.checkBordering(Player, Poet) == True:
+				elif engine.check_bordering(Player, Poet) == True:
 					self.talk_with_poet(Poet, surface)
 				elif Player.rect.x == 825 and Player.rect.y == 300:
 					tmp = self.exit('bitown')
