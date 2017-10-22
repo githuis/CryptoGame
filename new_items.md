@@ -46,3 +46,23 @@ As an example, I've used a pickle, created by me:
 - Picture: necronomicon.png
 - Item description: 0necronomicon
 - Comment: the most evil book ever created. Be very afraid
+
+
+
+### Cappucino
+
+- Name: Yellotzell
+- Link: https://github.com/Yellotzell/
+- Picture: cappucino.png
+- Item description: 0cappucino
+- Comment: Useful drink for repleneshing magic points.
+
+
+### Grapefruit
+
+- Name: Yellotzell
+- Link: https://github.com/Yellotzell/
+- Picture: grapefruit.png
+- Item description: 0grapefruit
+- Comment: A very useful ingredient to enhance magical potions.
+

@@ -1,0 +1,5 @@
+0unpicked: owwhh! What is this? It's a cappucino!!
+0unpicked2:You take the cappycino in your hands. It feels warm and safe. 
+0q1:Pick it? 
+
+0picked:You see a table where a cappucino was befora but nothing is there now.
